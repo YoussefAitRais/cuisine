@@ -1,1 +1,51 @@
-<p>navbar works!</p>
+<header class="w-full border-b shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+  
+        <!-- Logo -->
+        <div class="text-3xl font-semibold tracking-wide font-mono">
+          Mateam
+        </div>
+  
+        <!-- Center nav links -->
+        <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
+          <a href="#" class="font-semibold text-black">Home</a>
+          <a href="#" class="hover:text-black/70">Recipe</a>
+          <a href="#" class="hover:text-black/70">Bundles</a>
+          <a href="#" class="hover:text-black/70">Blog</a>
+        </nav>
+  
+        <!-- Right side -->
+        <div class="flex items-center gap-4">
+          <!-- Search Bar -->
+          <div class="relative hidden md:block">
+            <input 
+              type="text" 
+              placeholder="Search" 
+              class="pl-10 pr-4 py-2 border rounded-full outline-none focus:ring-2 focus:ring-gray-200"
+            />
+            <svg 
+              class="absolute left-3 top-2.5 h-4 w-4 text-gray-500" 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 1116.65 2a7.5 7.5 0 010 14.5z" />
+            </svg>
+          </div>
+  
+          <!-- Auth Buttons -->
+          <a href="#" class="text-sm hover:underline hidden md:inline-block">Sign in</a>
+          <a 
+            href="#" 
+            class="bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800"
+          >
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
