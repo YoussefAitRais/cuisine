@@ -5,24 +5,34 @@ import { HomeComponent } from "./home/home.component";
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { MealService } from './services/meal.service';
+import { Meal } from './services/mealTemplate';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HomeComponent, RecipeListComponent, RecipeDetailComponent],
+  imports: [HttpClientModule, RouterOutlet, NavbarComponent, HomeComponent, RecipeListComponent, RecipeDetailComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+goToMealDetail(arg0: string) {
+throw new Error('Method not implemented.');
+}
   title = 'recette';
-  meals : any[] = [];
+  meals : Meal[] = [];
 
-  constructor(private mealServices: MealService) {}  ngOnInit() {
+  constructor(private mealServices: MealService) {} 
+  
+  ngOnInit() {
     this.mealServices.getMeals().subscribe((data: any) => {
       this.meals = data.meals;
+      console.log(this.meals);
+    }, (error: any) => {
+      console.error('Error fetching meals:', error);
     });
   }
 }
