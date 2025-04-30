@@ -12,12 +12,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
+goBack() {
+throw new Error('Method not implemented.');
+}
 // Removed duplicate implementation of getMealProperty
   meal: Meal | null = null;
 i: any;
 
   constructor(private route: ActivatedRoute, private mealService: MealService) {}
 
+  // Removed duplicate implementation of getMealProperty
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
@@ -34,6 +38,7 @@ i: any;
   getMealProperty(meal: any, key: string): string {
     return meal[key] || '';
   }
+  
   
   
 }
